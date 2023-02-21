@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write a shell script to check if the number entered at the command line is prime or not.</title>
+</head>
+<body>
+    <div>
+        <h3><u><b>Problem:</b></u></h3>
+        <p>Q1. Write a shell script to check if the number entered at the command line is prime or not.</p>
+    </div>
+    <div>
+        <h3><u><b>Algorithm:</b></u></h3>
+    </div>
+    <div>
+        <h3><u><b>Flowchat:</b></u></h3>
+    </div>
+    <div>
+        <h3><u><b>Pseudo Code:</b></u></h3>
+    </div>
+    <div>
+        <h3><u><b>Source Code:</b></u></h3>
+        <pre>
+            #!/bin/bash
+            echo "Enter a number: "
+            read num
+            if [ $num -eq 0 ] || [ $num -eq 1 ];
+            then
+                echo "$num are neither a prime numbers nor a composite numbers."
+            else
+                for ((i=2; i<=num/2; i++))
+                do
+                    if [ $((num%i)) -eq 0 ]
+                then
+                    echo "$num is not a prime number."
+                    exit
+                fi
+                done
+                echo "$num is a prime number."
+            fi
+        </pre>
+    </div>
+    <div>
+        <h3><u><b>Output:</b></u></h3>
+        <pre>
+            $ chmod +x Q1.sh
+            $ ./Q1.sh
+            $ ./Q1.sh
+            Enter a number: 
+            0
+            0 are neither a prime numbers nor a composite numbers.
+            $ ./Q1.sh
+            Enter a number: 
+            5
+            5 is a prime number.
+            $ ./Q1.sh
+            Enter a number: 
+            6
+            6 is not a prime number.
+        </pre>
+    </div>
+</body>
+</html>
